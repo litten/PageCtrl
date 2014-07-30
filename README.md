@@ -10,22 +10,24 @@
 
 **1、实例化**
 
-@info new PageCtrl(ctn, fn)     
-@param ctn {Dom} 目标节点           
-@param fn {Function} 点击页码回调函数 cur-当前点击页码；pre-点击之前页面              
-
 ```js
+/* @info new PageCtrl(ctn, fn)     
+ * @param ctn {Dom} 目标节点           
+ * @param fn {Function} 点击页码回调函数 cur-当前点击页码；pre-点击之前页面       
+ */
+ 
 var pc = new PageCtrl($('.sort-page'), function pageActionFn(cur, pre) {
 	console.log('当前点击：'+cur + ', pre：'+pre);
 });
 ```
 **2、初始化**
 
-@param total {Number} 总页码数；     
-@param idx {Number} 当前页码，默认从1开始；       
-@param max {Number} 最多显示数，可为空默认为5；限制页码区域，超出部分用…代替         
-
 ```js
+/* @param total {Number} 总页码数；     
+ * @param idx {Number} 当前页码，默认从1开始；       
+ * @param max {Number} 最多显示数，可为空默认为5；限制页码区域，超出部分用…代替         
+ */
+
 pageCtrl.init({
     'total': 100,
     'idx': 1
