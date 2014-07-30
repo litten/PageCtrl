@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo for PageCtrl</title>
+	<link rel="stylesheet" href="css/mod.pagectrl.css">
+	<script src="http://1.url.cn/jslib/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="sort-page"></div>
+	
+	<script src="js/template/pagectrl-tpl.js"></script>
+	<script src="js/pagectrl.js"></script>
+	<script>
+
+		function pageActionFn(cur, pre) {
+	        console.log('当前点击：'+cur + ', pre：'+pre);
+	    }
+		var pc = new PageCtrl($('.sort-page'), pageActionFn);
+
+		pc.init({
+	        total: 100,
+	        max: 3,
+	        idx: 85
+	    });
+	</script>
+</body>
+</html>

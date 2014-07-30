@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/*列表页-分页按钮*/
+.page-pre-btn,.page-next-btn{
+    height: 38px;
+    line-height: 38px;
+    width: 78px;
+    background:#fff;
+    font-size:16px;
+    border:1px solid #d9d9d9;
+    color:#333;
+    text-align: center;
+    position: relative;
+    @include border-radius(2px);
+    &:hover{
+        background-color:#f1f1f1;
+    }
+}
+
+.page-pre-btn i, .page-next-btn i {
+  @include inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -3px;
+  width: 7px;
+  height: 12px;
+
+  //override code( vertical-align: auto) by @include generated;
+  //*vertical-align: sub;
+}
+
+.page-pre-btn i {
+  background: transparent url("../img/page-arr-left.png") no-repeat;
+}
+
+.page-next-btn i {
+  background: transparent url("../img/page-arr-right.png") no-repeat;
+}
+
+a.page-btn-dis{
+    border-color:#ededed;
+    color:#bcbcbc;
+    cursor: default!important;
+    background-color:#e3e3e3!important;
+    &:hover{
+        background-color:#e3e3e3!important;
+    }
+  //display: none!important;
+}
+
+.page-pre-btn{
+    i.page-btn-dis{
+        background: transparent url("../img/page-arr-left-dis.png") no-repeat;
+    }
+}
+.page-next-btn{
+    i.page-btn-dis{
+        background: transparent url("../img/page-arr-right-dis.png") no-repeat;
+    }    
+}
+
+
+.page-btn{
+    height: 38px;
+    line-height: 38px;
+    padding: 0 24px;
+    background:#fff;
+    border:1px solid #d9d9d9;
+    margin: 0 3px;
+    color:#333;
+    font-size:16px;
+    @include border-radius(2px);
+    &:hover{
+        background:#f1f1f1;
+    }
+}
+.page-btn-cur{
+    background:#049ee4;
+    border-color:#049ee4;
+    color:#fff;
+    &:hover{
+        background:#049ee4;
+    }
+}
+/*.page-frist-btn{
+    border-left:1px solid #d9d9d9!important;
+}*/

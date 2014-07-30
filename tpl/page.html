@@ -1,0 +1,59 @@
+<%if(total > 1){%>
+	<%
+		var idx = idx || 1;
+		var isFirst = (idx==1)?true:false;
+		var isLast = (idx==total)?true:false;
+		var from = parseInt(idx-max/2);
+        var to = parseInt(idx+max/2);
+        if(from == 2 || to == total-2){
+        	max = max+2;
+        }
+	%>	
+	<%if(total-2 <= max){%>
+		<div class="page-box">
+			<a href="javascript:void(0);" class="page-pre-btn <%if(isFirst){%>page-btn-dis<%}%>"><i class="page-btn-dis"></i></a>
+			<% for(var i=1,len=total;i<=len;i++){ %>
+				<a href="javascript:void(0);" data-index="<%=i%>" class="page-btn<%if(i == 1){ %> page-first<%}%><%if(i == len){ %> page-last<%}%><%if(i == idx){ %> page-btn-cur<%}%>"><%=i%></a>
+			<%}%>
+			<a href="javascript:void(0);" class="page-next-btn <%if(isLast){%>page-btn-dis<%}%>"><i></i></a>
+		</div>
+	<%}else{%>
+		<%if((from > 2) && (to < total-2)){%>
+			<div class="page-box">
+				<a href="javascript:void(0);" class="page-pre-btn"><i></i></a>
+				<a href="javascript:void(0);" data-index="1" class="page-btn page-first">1</a>
+				<a href="javascript:void(0);" data-index="2" class="page-btn">2</a>
+				<span>…</span>
+				<% for(var i=from,len=total;i<to;i++){ %>
+					<a href="javascript:void(0);" data-index="<%=i+1%>" class="page-btn<%if(i+1 == idx){ %> page-btn-cur<%}%>"><%=i+1%></a>
+				<%}%>
+				<span>…</span>
+				<a href="javascript:void(0);" data-index="<%=len-1%>" class="page-btn"><%=len-1%></a>
+				<a href="javascript:void(0);" data-index="<%=len%>" class="page-btn page-last"><%=len%></a>
+				<a href="javascript:void(0);" class="page-next-btn"><i></i></a>
+			</div>
+		<%}else{%>
+			<%if(from <= 2){%>
+				<a href="javascript:void(0);" class="page-pre-btn <%if(isFirst){%>page-btn-dis<%}%>"><i class="page-btn-dis"></i></a>
+				<% for(var i=1,len=total;i<=Math.max(max, to);i++){ %>
+					<a href="javascript:void(0);" data-index="<%=i%>" class="page-btn<%if(i == 1){ %> page-first<%}%><%if(i == len){ %> page-last<%}%><%if(i == idx){ %> page-btn-cur<%}%>"><%=i%></a>
+				<%}%>
+				<span>…</span>
+				<a href="javascript:void(0);" data-index="<%=len-1%>" class="page-btn"><%=len-1%></a>
+				<a href="javascript:void(0);" data-index="<%=len%>" class="page-btn page-last"><%=len%></a>
+				<a href="javascript:void(0);" class="page-next-btn"><i></i></a>
+			<%}%>
+
+			<%if(to >= total-2){%>
+				<a href="javascript:void(0);" class="page-pre-btn"><i></i></a>
+				<a href="javascript:void(0);" data-index="1" class="page-btn page-first">1</a>
+				<a href="javascript:void(0);" data-index="2" class="page-btn">2</a>
+				<span>…</span>
+				<% for(var i=Math.min(from , total-max),len=total;i<total;i++){ %>
+					<a href="javascript:void(0);" data-index="<%=i+1%>" class="page-btn<%if(i == idx-1){ %> page-btn-cur<%}%><%if(i == total-1){ %> page-last<%}%>"><%=i+1%></a>
+				<%}%>
+				<a href="javascript:void(0);" class="page-next-btn <%if(isLast){%>page-btn-dis<%}%>"><i></i></a>
+			<%}%>
+		<%}%>
+	<%}%>
+<%}%>
