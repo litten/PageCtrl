@@ -40,3 +40,5 @@ pageCtrl.init({
 
 根据设定的`total, idx, max`3个值进行计算，将分页模块智能展示为几种不同样式。
 具体请查看[demo](http://littendomo.sinaapp.com/pagectrl/example.html)。
+
+![demo](http://littendomo.sinaapp.com/pagectrl/demo-img/0.png)
