@@ -3,7 +3,7 @@
 分页组件，用于前端页面处理分页问题。                    
 
 1. 支持AMD            
-2. 支持grunt-tml模版组件              
+2. 支持[grunt-imweb-tpl-complie](https://www.npmjs.org/package/grunt-imweb-tpl-complie)模版组件              
 3. 兼容所有浏览器                 
 4. 基于Jquery                
 
@@ -39,4 +39,4 @@ pageCtrl.init({
 ### 展示 Show:
 
 根据设定的`total, idx, max`3个值进行计算，将分页模块智能展示为几种不同样式。
-具体请查看demo。
+具体请查看[demo](http://littendomo.sinaapp.com/pagectrl/example.html)。
